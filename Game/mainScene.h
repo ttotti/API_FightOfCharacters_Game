@@ -12,5 +12,5 @@ public:
 	mainScene();
 	~mainScene();
 
-	void init();
+	void init(HINSTANCE g_hInst);
 };

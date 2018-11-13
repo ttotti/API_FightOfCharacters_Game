@@ -5,13 +5,7 @@
 #include "CharacterSelect.h"
 #include "mainScene.h"
 
-#include "resource.h"
-
-//#define WIN_WIGHT 1250
-//#define WIN_HEIGHT 795
-
-#define MAINSCENE 100
-#define SELECTSCENE 101
+enum { MAINSCENE = 100, SELECTSCENE };
 
 class GameLoop
 {
@@ -21,9 +15,11 @@ public:
 
 	int selectMenu;
 
+	int M_x, M_y;
+
 public:
-	CharacterSelect Selectmap;
 	mainScene mainScene;
+	CharacterSelect CharacterSelect;
 
 public:
 	Bitmap map; // Bitmap 클래스 변수
@@ -33,6 +29,6 @@ public:
 	~GameLoop();
 
 	void init(HINSTANCE g_hInst);
-	void Loop(HDC hdc);
-	void DrawStartBitmap(HDC hdc);
+	void Loop();
+	void DrawBitmap(HDC hdc);
 };

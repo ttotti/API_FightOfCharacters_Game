@@ -1,16 +1,17 @@
 #pragma once
 
 #include <Windows.h>
+
 #include "Bitmap.h"
 
 class CharacterSelect
 {
 public:
-	Bitmap bitmap;
+	Bitmap BG_bitmap;
 
 public:
 	CharacterSelect();
 	~CharacterSelect();
 
-	void init();
+	void init(HINSTANCE g_hInst);
 };

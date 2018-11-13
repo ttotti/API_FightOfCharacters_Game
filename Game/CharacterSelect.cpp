@@ -8,7 +8,7 @@ CharacterSelect::~CharacterSelect()
 {
 }
 
-void CharacterSelect::init()
+void CharacterSelect::init(HINSTANCE g_hInst)
 {
-	//SelectBitmap.SetBitmap(g_)
+	BG_bitmap.SetBitmap(g_hInst, IDB_SELECT);
 }

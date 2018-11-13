@@ -1,13 +1,13 @@
 #pragma once
 
-class Point
+class Rect_Point
 {
 public:
 	int left, right, top, bottom;
 
 public:
-	Point();
-	~Point();
+	Rect_Point();
+	~Rect_Point();
 
 	void setPoint(int left, int top, int right, int bottom);
 

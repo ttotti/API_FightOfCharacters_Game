@@ -1,5 +1,4 @@
 #include <Windows.h> // 헤더파일
-#include "resource.h"
 
 #include "GameLoop.h"
 
@@ -10,9 +9,6 @@
 //#else
 //#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
 //#endif
-
-#define WIN_WIGHT 1250
-#define WIN_HEIGHT 795
 
 LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
 HINSTANCE g_hInst; // 많은 API함수들이 인스턴스 값을 요구하는데 hInstance 인수는 지역변수이기 때문에 WinMain 밖에서 쓸수없다 그래서 전역변수 g_hinst에 대입해둔다
@@ -81,13 +77,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		return 0;
 
 	case WM_TIMER:
+		gameloop.Loop();
+
 		InvalidateRect(hWnd, NULL, FALSE);
 		return 0;
 
 	case WM_PAINT:
 		hdc = BeginPaint(hWnd, &ps);
 
-		gameloop.Loop(hdc);
+		gameloop.DrawBitmap(hdc);
 
 		printf("WM_PAINT 호출!\n");
 
@@ -95,26 +93,32 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		return 0;
 
 	case WM_MOUSEMOVE:
-		switch (gameloop.selectMenu)
-		{
-		case MAINSCENE:
-		{
-			if (LOWORD(lParam) >= 485 && LOWORD(lParam) <= 752 && HIWORD(lParam) >= 496 && HIWORD(lParam) <= 629)
-			{
-				gameloop.mousePoint = true;
-				printf("true\n");
-			}
-			else
-			{
-				gameloop.mousePoint = false;
-				printf("false\n");
-			}
-			
-			return 0;
-		}
-		default:
-			break;
-		}
+		gameloop.M_x = LOWORD(lParam);
+		gameloop.M_y = HIWORD(lParam);
+
+		//switch (gameloop.selectMenu)
+		//{
+		//case MAINSCENE:
+		//{
+		//	if (LOWORD(lParam) >= 485 && LOWORD(lParam) <= 752 && HIWORD(lParam) >= 496 && HIWORD(lParam) <= 629)
+		//	{
+		//		gameloop.mousePoint = true;
+		//		printf("true\n");
+		//	}
+		//	else
+		//	{
+		//		gameloop.mousePoint = false;
+		//		printf("false\n");
+		//	}
+		//	
+		//	gameloop.x = LOWORD(lParam);
+		//	gameloop.y = HIWORD(lParam);
+
+		//	return 0;
+		//}
+		//default:
+		//	break;
+		//}
 		printf("x = %d  y = %d\n", LOWORD(lParam), HIWORD(lParam));
 		return 0;
 
@@ -164,4 +168,13 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	더블버퍼링 구현하기(진행 중)
 	게임 루프 클래스 만들기(진행 중)
 	InvalidateRect() 세 번째 인수 변경 TRUE -> FALSE
+
+	2018/11/13
+	더블버퍼링 구현하기(진행 중)
+	게임 루프 클래스 만들기(진행 중)
+	(기존) gameLoop.init() 에서 각 클래스의 비트맵 초기화 -> (변경) 각 클래스 별로 init() 함수를 만들어 비트맵 초기화
+	WM_MOUSEMOVE 에서 마우스의 좌표만 얻어오게 변경
+	point 클래스 이름 변경 Point -> Rect_Point
+
+
 */

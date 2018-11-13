@@ -3,6 +3,8 @@
 #include <Windows.h>
 #include <stdio.h>
 
+#include "resource.h"
+
 #define WIN_WIGHT 1250
 #define WIN_HEIGHT 795
 
