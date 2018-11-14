@@ -2,13 +2,10 @@
 
 Bitmap::Bitmap()
 {
+	hWnd = NULL;
+	hdc = NULL;
 	map = NULL;
 }
-
-//Bitmap::Bitmap(HINSTANCE hInstance, LPCWSTR IpBitmapName)
-//{
-//	map = LoadBitmap(hInstance, IpBitmapName);
-//}
 
 Bitmap::~Bitmap()
 {
@@ -17,9 +14,28 @@ Bitmap::~Bitmap()
 	system("pause");
 }
 
-void Bitmap::SetBitmap(HINSTANCE hInstance, int IpBitmapName)
+void Bitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
 {
+	this->hWnd = hWnd;
 	map = LoadBitmap(hInstance, MAKEINTRESOURCE(IpBitmapName));
+}
+
+void Bitmap::DramBitmap(int x, int y)
+{
+	hdc = GetDC(hWnd);
+
+	DramBitmap(hdc, x, y);
+
+	ReleaseDC(hWnd, hdc);
+}
+
+void Bitmap::DramBitmap(int x, int y, int w, int h)
+{
+	hdc = GetDC(hWnd);
+
+	DramBitmap(hdc, x, y, w, h);
+
+	ReleaseDC(hWnd, hdc);
 }
 
 void Bitmap::DramBitmap(HDC hdc, int x, int y)

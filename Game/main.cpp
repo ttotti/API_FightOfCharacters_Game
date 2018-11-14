@@ -70,27 +70,30 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 		hWndMain = hWnd;
 
-		gameloop.init(g_hInst);
+		gameloop.init(g_hInst, hWnd);
 
 		SetTimer(hWnd, 1, 100, NULL);
 
 		return 0;
 
 	case WM_TIMER:
+		gameloop.updata();
 		gameloop.Loop();
 
-		InvalidateRect(hWnd, NULL, FALSE);
+		//InvalidateRect(hWnd, NULL, FALSE);
 		return 0;
 
-	case WM_PAINT:
-		hdc = BeginPaint(hWnd, &ps);
+	//case WM_PAINT:
+	//	hdc = BeginPaint(hWnd, &ps);
 
-		gameloop.DrawBitmap(hdc);
+	//	gameloop.DrawBitmap(hdc);
 
-		printf("WM_PAINT 호출!\n");
+	//	printf("C_x = %d, C_y = %d\n", gameloop.C_x, gameloop.C_y);
 
-		EndPaint(hWnd, &ps);
-		return 0;
+	//	//printf("WM_PAINT 호출!\n");
+
+	//	EndPaint(hWnd, &ps);
+	//	return 0;
 
 	case WM_MOUSEMOVE:
 		gameloop.M_x = LOWORD(lParam);
@@ -123,10 +126,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		return 0;
 
 	case WM_LBUTTONDOWN:
-		if (gameloop.mousePoint)
-		{
+		gameloop.C_x = LOWORD(lParam);
+		gameloop.C_y = HIWORD(lParam);
 
-		}
+		return 0;
+
+	case WM_LBUTTONUP:
+		gameloop.C_x = 0;
+		gameloop.C_y = 0;
+
 		return 0;
 
 	case WM_DESTROY:
@@ -176,5 +184,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	WM_MOUSEMOVE 에서 마우스의 좌표만 얻어오게 변경
 	point 클래스 이름 변경 Point -> Rect_Point
 
+	2018/11/14
 
 */

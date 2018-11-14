@@ -7,11 +7,18 @@
 class CharacterSelect
 {
 public:
+	int M_x, M_y;
+
+	HWND hWnd;
+
 	Bitmap BG_bitmap;
 
 public:
 	CharacterSelect();
 	~CharacterSelect();
 
-	void init(HINSTANCE g_hInst);
+	void init(HINSTANCE g_hInst, HWND hWnd);
+
+	void DrawBitmap();
+	void MousePoint(int x, int y);
 };

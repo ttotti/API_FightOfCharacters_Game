@@ -11,16 +11,23 @@
 class Bitmap
 {
 public:
+	HWND hWnd;
+	HDC hdc;
+
 	HBITMAP map;
 
 public:
 	Bitmap();
-	//Bitmap(HINSTANCE hInstance, LPCWSTR IpBitmapName);
 	~Bitmap();
 
-	void SetBitmap(HINSTANCE hInstance, int IpBitmapName);
+	void SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName);
+
+	void DramBitmap(int x, int y);
+	void DramBitmap(int x, int y, int w, int h);
+
 	void DramBitmap(HDC hdc, int x, int y);
 	void DramBitmap(HDC hdc, int x, int y, int w, int h);
+
 	void Double_DramBitmap(HDC hdc, int x, int y);
 	void Double_DramBitmap(HDC hdc, int x, int y, int w, int h);
 };

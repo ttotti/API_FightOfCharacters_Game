@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Windows.h>
-#include "point.h"
+#include "Rect_point.h"
 
 class tilePoint
 {

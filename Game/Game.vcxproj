@@ -144,7 +144,7 @@
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainScene.cpp" />
-    <ClCompile Include="point.cpp" />
+    <ClCompile Include="Rect_point.cpp" />
     <ClCompile Include="tilePoint.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -152,7 +152,7 @@
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="mainScene.h" />
-    <ClInclude Include="point.h" />
+    <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="tilePoint.h" />
   </ItemGroup>

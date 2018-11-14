@@ -15,7 +15,8 @@ public:
 
 	int selectMenu;
 
-	int M_x, M_y;
+	// 마우스 좌표 및 클릭 좌표
+	int M_x, M_y, C_x, C_y;
 
 public:
 	mainScene mainScene;
@@ -28,7 +29,8 @@ public:
 	GameLoop();
 	~GameLoop();
 
-	void init(HINSTANCE g_hInst);
+	void init(HINSTANCE g_hInst,HWND hWnd);
 	void Loop();
 	void DrawBitmap(HDC hdc);
+	void updata();
 };
