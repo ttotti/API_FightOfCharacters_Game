@@ -78,7 +78,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
 	case WM_TIMER:
 		gameloop.updata();
-		gameloop.Loop();
+		gameloop.Loop(g_hInst, hWnd);
 
 		//InvalidateRect(hWnd, NULL, FALSE);
 		return 0;

@@ -2,7 +2,7 @@
 
 #include "Bitmap.h"
 
-class mainScene
+class MainScene
 {
 public:
 	int M_x, M_y;
@@ -11,8 +11,9 @@ public:
 	Bitmap startbitmap,startbitmap2;
 
 public:
-	mainScene();
-	~mainScene();
+	MainScene();
+	MainScene(HINSTANCE g_hInst, HWND hWnd);
+	~MainScene();
 
 	void init(HINSTANCE g_hInst, HWND hWnd);
 

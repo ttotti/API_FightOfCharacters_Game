@@ -19,8 +19,8 @@ public:
 	int M_x, M_y, C_x, C_y;
 
 public:
-	mainScene mainScene;
-	CharacterSelect CharacterSelect;
+	MainScene* mainScene;
+	CharacterSelect* characterSelect;
 
 public:
 	Bitmap map; // Bitmap 클래스 변수
@@ -30,7 +30,8 @@ public:
 	~GameLoop();
 
 	void init(HINSTANCE g_hInst,HWND hWnd);
-	void Loop();
-	void DrawBitmap(HDC hdc);
+	//void Loop();
+	void Loop(HINSTANCE g_hInst, HWND hWnd);
+	//void DrawBitmap(HDC hdc);
 	void updata();
 };

@@ -4,14 +4,17 @@ CharacterSelect::CharacterSelect()
 {
 }
 
+CharacterSelect::CharacterSelect(HINSTANCE g_hInst, HWND hWnd)
+{
+	BG_bitmap.SetBitmap(hWnd, g_hInst, IDB_SELECT);
+}
+
 CharacterSelect::~CharacterSelect()
 {
 }
 
 void CharacterSelect::init(HINSTANCE g_hInst, HWND hWnd)
 {
-	this->hWnd = hWnd;
-
 	BG_bitmap.SetBitmap(hWnd, g_hInst, IDB_SELECT);
 }
 
