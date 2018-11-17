@@ -160,9 +160,11 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\resource\Home.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />
     <Image Include="..\resource\GameStart.bmp" />
     <Image Include="..\resource\GameStart2.bmp" />
+    <Image Include="..\resource\HomeClick.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
     <Image Include="..\resource\map.bmp" />
   </ItemGroup>

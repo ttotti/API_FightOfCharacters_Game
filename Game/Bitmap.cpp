@@ -11,7 +11,7 @@ Bitmap::~Bitmap()
 {
 	DeleteObject(map);
 	printf("Bitmap 클래스 소멸!\n");
-	system("pause");
+	//system("pause");
 }
 
 void Bitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
@@ -43,7 +43,6 @@ void Bitmap::DramBitmap(HDC hdc, int x, int y)
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
 	int bx, by;         // 비트맵의 크기를 저장할 변수
-	BITMAP bit;         // BITMAP 구조체
 
 	MemDC = CreateCompatibleDC(hdc);
 	oldBitmap = (HBITMAP)SelectObject(MemDC, map);
@@ -65,7 +64,6 @@ void Bitmap::DramBitmap(HDC hdc, int x, int y, int w, int h)
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
 	int bx, by;         // 비트맵의 크기를 저장할 변수
-	BITMAP bit;         // BITMAP 구조체
 
 	MemDC = CreateCompatibleDC(hdc);
 	oldBitmap = (HBITMAP)SelectObject(MemDC, map);
@@ -90,7 +88,6 @@ void Bitmap::Double_DramBitmap(HDC hdc, int x, int y)
 	HBITMAP BackBitmap;
 
 	int bx, by;         // 비트맵의 크기를 저장할 변수
-	BITMAP bit;         // BITMAP 구조체
 
 	GetObject(map, sizeof(BITMAP), &bit);
 	bx = bit.bmWidth;
@@ -134,7 +131,6 @@ void Bitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
 	HBITMAP BackBitmap;
 
 	int bx, by;         // 비트맵의 크기를 저장할 변수
-	BITMAP bit;         // BITMAP 구조체
 
 	GetObject(map, sizeof(BITMAP), &bit);
 	bx = bit.bmWidth;
@@ -159,4 +155,16 @@ void Bitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
 
 	DeleteObject(BackBitmap);
 	DeleteDC(MemDC);
+}
+
+int Bitmap::GetWight()
+{
+	GetObject(map, sizeof(BITMAP), &bit);
+	return bit.bmWidth;
+}
+
+int Bitmap::GetHeight()
+{
+	GetObject(map, sizeof(BITMAP), &bit);
+	return bit.bmHeight;
 }

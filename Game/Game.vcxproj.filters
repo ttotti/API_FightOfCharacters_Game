@@ -81,5 +81,11 @@
     <Image Include="..\resource\CharacterSelect.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\resource\Home.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\HomeClick.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
   </ItemGroup>
 </Project>

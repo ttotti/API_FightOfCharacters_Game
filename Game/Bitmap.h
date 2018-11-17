@@ -14,6 +14,8 @@ public:
 	HWND hWnd;
 	HDC hdc;
 
+	BITMAP bit;
+
 	HBITMAP map;
 
 public:
@@ -30,4 +32,7 @@ public:
 
 	void Double_DramBitmap(HDC hdc, int x, int y);
 	void Double_DramBitmap(HDC hdc, int x, int y, int w, int h);
+
+	int GetWight();
+	int GetHeight();
 };

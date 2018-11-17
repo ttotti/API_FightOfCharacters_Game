@@ -70,15 +70,15 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 		hWndMain = hWnd;
 
-		gameloop.init(g_hInst, hWnd);
+		gameloop.init();
 
 		SetTimer(hWnd, 1, 100, NULL);
 
 		return 0;
 
 	case WM_TIMER:
-		gameloop.updata();
 		gameloop.Loop(g_hInst, hWnd);
+		//gameloop.updata();
 
 		//InvalidateRect(hWnd, NULL, FALSE);
 		return 0;
@@ -186,4 +186,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
 	2018/11/14
 
+	2018/11/17
+	각 Scene을 전환할 때 동적으로 할당하여 Scene을 만들고 다른 Scene으로 넘어갈 때 해제하고 다른 Scene을 할당하여 만들게 하였다
 */

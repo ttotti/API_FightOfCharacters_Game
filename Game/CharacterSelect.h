@@ -10,6 +10,8 @@ public:
 	int M_x, M_y;
 
 	Bitmap BG_bitmap;
+	Bitmap Home_bitmap;
+	Bitmap ClickHome_bitmap;
 
 public:
 	CharacterSelect();

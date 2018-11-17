@@ -11,10 +11,13 @@ GameLoop::~GameLoop()
 	delete characterSelect;
 }
 
-void GameLoop::init(HINSTANCE g_hInst, HWND hWnd)
+void GameLoop::init()
 {
+	mainScene = NULL;
+	characterSelect = NULL;
+
 	//mainScene = new MainScene(g_hInst, hWnd);
-	characterSelect = new CharacterSelect(g_hInst, hWnd);
+	//characterSelect = new CharacterSelect(g_hInst, hWnd);
 	//mainScene->init(g_hInst, hWnd);
 	//characterSelect->init(g_hInst, hWnd);
 }
@@ -48,7 +51,12 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 	switch (selectMenu)
 	{
 	case MAINSCENE:
-		mainScene = new MainScene(g_hInst, hWnd);
+		if (mainScene == NULL)
+		{
+			mainScene = new MainScene(g_hInst, hWnd);
+		}
+
+		mainScene->MousePoint(M_x, M_y);
 
 		mainScene->DrawBitmap();
 
@@ -56,12 +64,28 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		{
 			selectMenu = SELECTSCENE;
 			delete mainScene;
+			mainScene = NULL;
 		}
 
 		return;
 
 	case SELECTSCENE:
+		if (characterSelect == NULL)
+		{
+			characterSelect = new CharacterSelect(g_hInst, hWnd);
+		}
+
+		characterSelect->MousePoint(M_x, M_y);
+
 		characterSelect->DrawBitmap();
+
+		if (C_x >= 50 && C_x <= characterSelect->Home_bitmap.GetWight() + 50 && C_y >= 666 && C_y <= characterSelect->Home_bitmap.GetHeight() + 666)
+		{
+			selectMenu = MAINSCENE;
+			delete characterSelect;
+			characterSelect = NULL;
+		}
+
 		printf("SELECTSCENE\n");
 		return;
 
@@ -92,8 +116,6 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 //	}
 //}
 
-void GameLoop::updata()
-{
-	mainScene->MousePoint(M_x, M_y);
-	characterSelect->MousePoint(M_x, M_y);
-}
+//void GameLoop::updata()
+//{
+//}

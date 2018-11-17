@@ -29,7 +29,7 @@ public:
 	GameLoop();
 	~GameLoop();
 
-	void init(HINSTANCE g_hInst,HWND hWnd);
+	void init();
 	//void Loop();
 	void Loop(HINSTANCE g_hInst, HWND hWnd);
 	//void DrawBitmap(HDC hdc);
