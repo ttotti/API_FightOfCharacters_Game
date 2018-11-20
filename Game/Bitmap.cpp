@@ -1,26 +1,28 @@
 #include "Bitmap.h"
 
-Bitmap::Bitmap()
+gBitmap::gBitmap()
 {
 	hWnd = NULL;
 	hdc = NULL;
 	map = NULL;
+
+	//GdiplusStartup(&m_GdiplusToken, &m_GdiplusStartupInput, NULL);
 }
 
-Bitmap::~Bitmap()
+gBitmap::~gBitmap()
 {
 	DeleteObject(map);
 	printf("Bitmap 클래스 소멸!\n");
 	//system("pause");
 }
 
-void Bitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
+void gBitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
 {
 	this->hWnd = hWnd;
 	map = LoadBitmap(hInstance, MAKEINTRESOURCE(IpBitmapName));
 }
 
-void Bitmap::DramBitmap(int x, int y)
+void gBitmap::DramBitmap(int x, int y)
 {
 	hdc = GetDC(hWnd);
 
@@ -29,7 +31,7 @@ void Bitmap::DramBitmap(int x, int y)
 	ReleaseDC(hWnd, hdc);
 }
 
-void Bitmap::DramBitmap(int x, int y, int w, int h)
+void gBitmap::DramBitmap(int x, int y, int w, int h)
 {
 	hdc = GetDC(hWnd);
 
@@ -38,7 +40,7 @@ void Bitmap::DramBitmap(int x, int y, int w, int h)
 	ReleaseDC(hWnd, hdc);
 }
 
-void Bitmap::DramBitmap(HDC hdc, int x, int y)
+void gBitmap::DramBitmap(HDC hdc, int x, int y)
 {
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -59,7 +61,7 @@ void Bitmap::DramBitmap(HDC hdc, int x, int y)
 	DeleteDC(MemDC);
 }
 
-void Bitmap::DramBitmap(HDC hdc, int x, int y, int w, int h)
+void gBitmap::DramBitmap(HDC hdc, int x, int y, int w, int h)
 {
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -80,7 +82,7 @@ void Bitmap::DramBitmap(HDC hdc, int x, int y, int w, int h)
 	DeleteDC(MemDC);
 }
 
-void Bitmap::Double_DramBitmap(HDC hdc, int x, int y)
+void gBitmap::Double_DramBitmap(HDC hdc, int x, int y)
 {
 	HDC MemDC, BackDC;  // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -123,7 +125,7 @@ void Bitmap::Double_DramBitmap(HDC hdc, int x, int y)
 	DeleteDC(MemDC);
 }
 
-void Bitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
+void gBitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
 {
 	HDC MemDC, BackDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -157,13 +159,13 @@ void Bitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
 	DeleteDC(MemDC);
 }
 
-int Bitmap::GetWight()
+int gBitmap::GetWight()
 {
 	GetObject(map, sizeof(BITMAP), &bit);
 	return bit.bmWidth;
 }
 
-int Bitmap::GetHeight()
+int gBitmap::GetHeight()
 {
 	GetObject(map, sizeof(BITMAP), &bit);
 	return bit.bmHeight;

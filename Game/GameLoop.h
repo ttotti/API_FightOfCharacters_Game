@@ -23,7 +23,7 @@ public:
 	CharacterSelect* characterSelect;
 
 public:
-	Bitmap map; // Bitmap 클래스 변수
+	gBitmap map; // Bitmap 클래스 변수
 
 public:
 	GameLoop();

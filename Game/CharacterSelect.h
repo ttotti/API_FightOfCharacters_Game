@@ -4,14 +4,18 @@
 
 #include "Bitmap.h"
 
+#include "GdiDraw.h"
+
 class CharacterSelect
 {
 public:
 	int M_x, M_y;
 
-	Bitmap BG_bitmap;
-	Bitmap Home_bitmap;
-	Bitmap ClickHome_bitmap;
+	gBitmap BG_bitmap;
+	gBitmap Home_bitmap;
+	gBitmap ClickHome_bitmap;
+
+	GDIplus chirnoface;
 
 public:
 	CharacterSelect();

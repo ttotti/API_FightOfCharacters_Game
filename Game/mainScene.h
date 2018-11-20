@@ -7,8 +7,8 @@ class MainScene
 public:
 	int M_x, M_y;
 
-	Bitmap mainbitmap;
-	Bitmap startbitmap,startbitmap2;
+	gBitmap mainbitmap;
+	gBitmap startbitmap,startbitmap2;
 
 public:
 	MainScene();

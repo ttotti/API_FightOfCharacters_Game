@@ -5,10 +5,12 @@
 
 #include "resource.h"
 
+//</gdiplus.h>
+
 #define WIN_WIGHT 1250
 #define WIN_HEIGHT 795
 
-class Bitmap
+class gBitmap
 {
 public:
 	HWND hWnd;
@@ -19,8 +21,8 @@ public:
 	HBITMAP map;
 
 public:
-	Bitmap();
-	~Bitmap();
+	gBitmap();
+	~gBitmap();
 
 	void SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName);
 
