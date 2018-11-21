@@ -26,14 +26,18 @@ public:
 
 	void SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName);
 
-	void DramBitmap(int x, int y);
-	void DramBitmap(int x, int y, int w, int h);
 
-	void DramBitmap(HDC hdc, int x, int y);
-	void DramBitmap(HDC hdc, int x, int y, int w, int h);
+	void DrawBitmap(int x, int y);
+	void DrawBitmap(HDC hdc, int x, int y);
+
+	void DrawBitmap(int x, int y, int w, int h);
+	void DrawBitmap(HDC hdc, int x, int y, int w, int h);
 
 	void Double_DramBitmap(HDC hdc, int x, int y);
 	void Double_DramBitmap(HDC hdc, int x, int y, int w, int h);
+
+	void DrawTransparentBlt(int x, int y, int r, int g, int b);
+	void DrawTransparentBlt(HDC hdc, int x, int y, int r, int g, int b);
 
 	int GetWight();
 	int GetHeight();

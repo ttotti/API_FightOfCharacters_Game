@@ -3,6 +3,7 @@
 #include <Windows.h>
 #include <gdiplus.h>
 #include <stdio.h>
+#include <wingdi.h>
 
 using namespace Gdiplus;
 
@@ -22,5 +23,5 @@ public:
 	~GDIplus();
 
 	void setImage(HWND hWnd, const WCHAR* Filename);
-	void DrawImage(int x, int y);
+	void DrawImage(int x, int y, const WCHAR* Filename);
 };

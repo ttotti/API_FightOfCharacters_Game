@@ -92,6 +92,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>msimg32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -162,6 +163,7 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\resource\chirno\Chirnoface.bmp" />
     <Image Include="..\resource\Home.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />
     <Image Include="..\resource\GameStart.bmp" />

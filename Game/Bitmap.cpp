@@ -22,25 +22,25 @@ void gBitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
 	map = LoadBitmap(hInstance, MAKEINTRESOURCE(IpBitmapName));
 }
 
-void gBitmap::DramBitmap(int x, int y)
+void gBitmap::DrawBitmap(int x, int y)
 {
 	hdc = GetDC(hWnd);
 
-	DramBitmap(hdc, x, y);
+	DrawBitmap(hdc, x, y);
 
 	ReleaseDC(hWnd, hdc);
 }
 
-void gBitmap::DramBitmap(int x, int y, int w, int h)
+void gBitmap::DrawBitmap(int x, int y, int w, int h)
 {
 	hdc = GetDC(hWnd);
 
-	DramBitmap(hdc, x, y, w, h);
+	DrawBitmap(hdc, x, y, w, h);
 
 	ReleaseDC(hWnd, hdc);
 }
 
-void gBitmap::DramBitmap(HDC hdc, int x, int y)
+void gBitmap::DrawBitmap(HDC hdc, int x, int y)
 {
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -61,7 +61,7 @@ void gBitmap::DramBitmap(HDC hdc, int x, int y)
 	DeleteDC(MemDC);
 }
 
-void gBitmap::DramBitmap(HDC hdc, int x, int y, int w, int h)
+void gBitmap::DrawBitmap(HDC hdc, int x, int y, int w, int h)
 {
 	HDC MemDC;		    // 메모리 DC
 	HBITMAP oldBitmap;  // 해제용 변수
@@ -156,6 +156,36 @@ void gBitmap::Double_DramBitmap(HDC hdc, int x, int y, int w, int h)
 	SelectObject(MemDC, oldBitmap);
 
 	DeleteObject(BackBitmap);
+	DeleteDC(MemDC);
+}
+
+void gBitmap::DrawTransparentBlt(int x, int y, int r, int g, int b)
+{
+	hdc = GetDC(hWnd);
+
+	DrawTransparentBlt(hdc, x, y, r, g, b);
+
+	ReleaseDC(hWnd, hdc);
+}
+
+void gBitmap::DrawTransparentBlt(HDC hdc, int x, int y, int r, int g, int b)
+{
+	HDC MemDC;		    // 메모리 DC
+	HBITMAP oldBitmap;  // 해제용 변수
+	int bx, by;         // 비트맵의 크기를 저장할 변수
+
+	MemDC = CreateCompatibleDC(hdc);
+	oldBitmap = (HBITMAP)SelectObject(MemDC, map);
+
+	// GetObject는 핸들로부터 펜, 브러시, 비트맵 등의 GDI 오브젝트 정보를 조사하는 함수인데
+	// BITMAP 구조체의 bmWidth, bmHeight 멤버를 읽으면 비트맵 크기를 구할 수 있다
+	GetObject(map, sizeof(BITMAP), &bit);
+	bx = bit.bmWidth;
+	by = bit.bmHeight;
+
+	TransparentBlt(hdc, x, y, bx, by, MemDC, 0, 0, bx, by, RGB(r, g, b));
+
+	SelectObject(MemDC, oldBitmap);
 	DeleteDC(MemDC);
 }
 
