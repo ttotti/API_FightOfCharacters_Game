@@ -13,12 +13,16 @@
 class gBitmap
 {
 public:
+	int bmWidth, bmHeight;
+
 	HWND hWnd;
-	HDC hdc;
+	HDC hdc, MemDC, BackDC;
 
 	BITMAP bit;
 
 	HBITMAP map;
+	HBITMAP Backmap;
+	HBITMAP hPreBit;
 
 public:
 	gBitmap();
@@ -28,16 +32,13 @@ public:
 
 
 	void DrawBitmap(int x, int y);
-	void DrawBitmap(HDC hdc, int x, int y);
+	void Double_DrawBitmap(int x, int y);
 
 	void DrawBitmap(int x, int y, int w, int h);
-	void DrawBitmap(HDC hdc, int x, int y, int w, int h);
-
-	void Double_DramBitmap(HDC hdc, int x, int y);
-	void Double_DramBitmap(HDC hdc, int x, int y, int w, int h);
+	void Double_DrawBitmap(int x, int y, int w, int h);
 
 	void DrawTransparentBlt(int x, int y, int r, int g, int b);
-	void DrawTransparentBlt(HDC hdc, int x, int y, int r, int g, int b);
+	void Double_DrawTransparentBlt(int x, int y, int r, int g, int b);
 
 	int GetWight();
 	int GetHeight();

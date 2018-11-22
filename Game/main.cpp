@@ -72,7 +72,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 
 		gameloop.init();
 
-		SetTimer(hWnd, 1, 100, NULL);
+		SetTimer(hWnd, 1, 10, NULL);
 
 		return 0;
 

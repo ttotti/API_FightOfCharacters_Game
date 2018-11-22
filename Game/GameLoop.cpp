@@ -67,7 +67,7 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 			mainScene = NULL;
 		}
 
-		return;
+		break;
 
 	case SELECTSCENE:
 		if (characterSelect == NULL)
@@ -87,11 +87,13 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		}
 
 		printf("SELECTSCENE\n");
-		return;
+		break;
 
 	default:
-		break;
+		return;
 	}
+
+	//printf("switch ≈ª√‚!!\n");
 }
 
 //void GameLoop::DrawBitmap(HDC hdc)

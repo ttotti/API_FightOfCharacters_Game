@@ -24,9 +24,9 @@ void CharacterSelect::init(HINSTANCE g_hInst, HWND hWnd)
 
 void CharacterSelect::DrawBitmap()
 {
-	BG_bitmap.DrawBitmap(0, 0, WIN_WIGHT, WIN_HEIGHT);
+	BG_bitmap.Double_DrawBitmap(0, 0, WIN_WIGHT, WIN_HEIGHT);
 
-	Home_bitmap.DrawBitmap(50, 666);
+	Home_bitmap.Double_DrawBitmap(50, 666);
 
 	chirnoface.DrawTransparentBlt(100, 100, 255, 0, 255);
 
