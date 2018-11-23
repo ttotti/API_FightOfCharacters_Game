@@ -3,17 +3,18 @@
 #include <Windows.h>
 
 #include "Bitmap.h"
+#include "Layer.h"
 
-class CharacterSelect
+class CharacterSelect :public Layer
 {
 public:
 	int M_x, M_y;
 
-	gBitmap BG_bitmap;
-	gBitmap Home_bitmap;
-	gBitmap ClickHome_bitmap;
+	gBitmap* BG_bitmap;
+	gBitmap* Home_bitmap;
+	gBitmap* ClickHome_bitmap;
 
-	gBitmap chirnoface;
+	gBitmap* chirnoface;
 
 public:
 	CharacterSelect();

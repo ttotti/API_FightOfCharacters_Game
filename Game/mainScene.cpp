@@ -5,35 +5,51 @@ MainScene::MainScene()
 }
 
 MainScene::MainScene(HINSTANCE g_hInst, HWND hWnd)
+	:Layer(hWnd)
 {
-	mainbitmap.SetBitmap(hWnd, g_hInst, IDB_MAINSCENE);
-	startbitmap.SetBitmap(hWnd, g_hInst, IDB_GAMESTART);
-	startbitmap2.SetBitmap(hWnd, g_hInst, IDB_GAMESTART2);
+	mainbitmap = new gBitmap;
+	startbitmap = new gBitmap;
+	startbitmap2 = new gBitmap;
+
+	mainbitmap->SetBitmap(hWnd, g_hInst, IDB_MAINSCENE);
+	startbitmap->SetBitmap(hWnd, g_hInst, IDB_GAMESTART);
+	startbitmap2->SetBitmap(hWnd, g_hInst, IDB_GAMESTART2);
 }
 
 MainScene::~MainScene()
 {
+	delete mainbitmap;
+	delete startbitmap;
+	delete startbitmap2;
+
+	mainbitmap = NULL;
+	startbitmap = NULL;
+	startbitmap2 = NULL;
 }
 
 void MainScene::init(HINSTANCE g_hInst, HWND hWnd)
 {
-	mainbitmap.SetBitmap(hWnd, g_hInst, IDB_MAINSCENE);
-	startbitmap.SetBitmap(hWnd, g_hInst, IDB_GAMESTART);
-	startbitmap2.SetBitmap(hWnd, g_hInst, IDB_GAMESTART2);
 }
 
 void MainScene::DrawBitmap()
 {
-	mainbitmap.Double_DrawBitmap(0, 0, WIN_WIGHT, WIN_HEIGHT);
+	mainbitmap->set_AllPoint(0, 0, WIN_WIGHT, WIN_HEIGHT);
+	this->Draw_StretchBit(mainbitmap);
 
 	if (M_x >= 485 && M_x <= 752 && M_y >= 496 && M_y <= 629)
 	{
-		startbitmap2.Double_DrawBitmap(WIN_WIGHT / 2 - 140, WIN_HEIGHT / 2 + 100);
+		startbitmap2->set_X(WIN_WIGHT / 2 - 140);
+		startbitmap2->set_Y(WIN_HEIGHT / 2 + 100);
+		this->Draw_BitBlt(startbitmap2);
 	}
 	else
 	{
-		startbitmap.Double_DrawBitmap(WIN_WIGHT / 2 - 140, WIN_HEIGHT / 2 + 100);
+		startbitmap->set_X(WIN_WIGHT / 2 - 140);
+		startbitmap->set_Y(WIN_HEIGHT / 2 + 100);
+		this->Draw_BitBlt(startbitmap);
 	}
+
+	this->Draw();
 }
 
 void MainScene::MousePoint(int x, int y)

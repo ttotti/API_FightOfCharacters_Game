@@ -143,6 +143,7 @@
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainScene.cpp" />
     <ClCompile Include="Rect_point.cpp" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="Layer.h" />
     <ClInclude Include="mainScene.h" />
     <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />

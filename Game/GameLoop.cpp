@@ -79,7 +79,7 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 
 		characterSelect->DrawBitmap();
 
-		if (C_x >= 50 && C_x <= characterSelect->Home_bitmap.GetWight() + 50 && C_y >= 666 && C_y <= characterSelect->Home_bitmap.GetHeight() + 666)
+		if (C_x >= 50 && C_x <= characterSelect->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelect->Home_bitmap->GetHeight() + 666)
 		{
 			selectMenu = MAINSCENE;
 			delete characterSelect;

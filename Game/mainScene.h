@@ -1,14 +1,16 @@
 #pragma once
 
 #include "Bitmap.h"
+#include "Layer.h"
 
-class MainScene
+class MainScene :public Layer
 {
 public:
 	int M_x, M_y;
 
-	gBitmap mainbitmap;
-	gBitmap startbitmap,startbitmap2;
+	gBitmap* mainbitmap;
+	gBitmap* startbitmap;
+	gBitmap* startbitmap2;
 
 public:
 	MainScene();
