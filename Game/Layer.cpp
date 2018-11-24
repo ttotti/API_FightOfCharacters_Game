@@ -59,7 +59,7 @@ void Layer::Draw_StretchBit(gBitmap* bitmap)
 {
 	SelectObject(BackDC, bitmap->Getbitmap());
 
-	StretchBlt(MemDC, 0, 0, bitmap->get_W(), bitmap->get_H(), BackDC, bitmap->get_X(), bitmap->get_Y(), bitmap->GetWidth(), bitmap->GetHeight(), SRCCOPY);
+	StretchBlt(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->get_W(), bitmap->get_H(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), SRCCOPY);
 }
 
 void Layer::Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b)

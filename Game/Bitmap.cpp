@@ -65,12 +65,12 @@ void gBitmap::set_Y(float y)
 
 void gBitmap::set_W(float w)
 {
-	this->y = y;
+	this->w = w;
 }
 
 void gBitmap::set_H(float h)
 {
-	this->y = y;
+	this->h = h;
 }
 
 void gBitmap::set_AllPoint(float x, float y, float w, float h)

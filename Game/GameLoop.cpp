@@ -1,5 +1,10 @@
 #include "GameLoop.h"
 
+int GameLoop::M_x = 0;
+int GameLoop::M_y = 0;
+int GameLoop::C_x = 0;
+int GameLoop::C_y = 0;
+
 GameLoop::GameLoop()
 {
 	selectMenu = MAINSCENE;
@@ -15,36 +20,7 @@ void GameLoop::init()
 {
 	mainScene = NULL;
 	characterSelect = NULL;
-
-	//mainScene = new MainScene(g_hInst, hWnd);
-	//characterSelect = new CharacterSelect(g_hInst, hWnd);
-	//mainScene->init(g_hInst, hWnd);
-	//characterSelect->init(g_hInst, hWnd);
 }
-
-//void GameLoop::Loop()
-//{
-//	switch (selectMenu)
-//	{
-//	case MAINSCENE:
-//		mainScene->DrawBitmap();
-//
-//		if (C_x >= 485 && C_x <= 752 && C_y >= 496 && C_y <= 629)
-//		{
-//			selectMenu = SELECTSCENE;
-//		}
-//
-//		return;
-//
-//	case SELECTSCENE:
-//		characterSelect->DrawBitmap();
-//		printf("SELECTSCENE\n");
-//		return;
-//
-//	default:
-//		break;
-//	}
-//}
 
 void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 {
@@ -55,8 +31,6 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		{
 			mainScene = new MainScene(g_hInst, hWnd);
 		}
-
-		mainScene->MousePoint(M_x, M_y);
 
 		mainScene->DrawBitmap();
 
@@ -74,8 +48,6 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		{
 			characterSelect = new CharacterSelect(g_hInst, hWnd);
 		}
-
-		characterSelect->MousePoint(M_x, M_y);
 
 		characterSelect->DrawBitmap();
 
@@ -95,29 +67,3 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 
 	//printf("switch Å»Ãâ!!\n");
 }
-
-//void GameLoop::DrawBitmap(HDC hdc)
-//{
-//	if (selectMenu == MAINSCENE)
-//	{
-//		mainScene->mainbitmap.DramBitmap(hdc, 0, 0, WIN_WIGHT, WIN_HEIGHT);
-//
-//		if (M_x >= 485 && M_x <= 752 && M_y >= 496 && M_y <= 629)
-//		{
-//			mainScene->startbitmap2.DramBitmap(hdc, WIN_WIGHT / 2 - 140, WIN_HEIGHT / 2 + 100);
-//		}
-//		else
-//		{
-//			mainScene.startbitmap.DramBitmap(hdc, WIN_WIGHT / 2 - 140, WIN_HEIGHT / 2 + 100);
-//
-//		}
-//	}
-//	else
-//	{
-//
-//	}
-//}
-
-//void GameLoop::updata()
-//{
-//}

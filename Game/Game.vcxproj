@@ -143,6 +143,7 @@
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="GameLoop.cpp" />
+    <ClCompile Include="GameStart.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainScene.cpp" />
@@ -153,7 +154,9 @@
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="GameLoop.h" />
+    <ClInclude Include="GameStart.h" />
     <ClInclude Include="Layer.h" />
+    <ClInclude Include="macro.h" />
     <ClInclude Include="mainScene.h" />
     <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />
@@ -169,6 +172,7 @@
     <Image Include="..\resource\GameStart.bmp" />
     <Image Include="..\resource\GameStart2.bmp" />
     <Image Include="..\resource\HomeClick.bmp" />
+    <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
     <Image Include="..\resource\map.bmp" />
   </ItemGroup>

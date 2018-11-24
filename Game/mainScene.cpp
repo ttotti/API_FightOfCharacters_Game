@@ -36,7 +36,7 @@ void MainScene::DrawBitmap()
 	mainbitmap->set_AllPoint(0, 0, WIN_WIGHT, WIN_HEIGHT);
 	this->Draw_StretchBit(mainbitmap);
 
-	if (M_x >= 485 && M_x <= 752 && M_y >= 496 && M_y <= 629)
+	if (GameLoop::M_x >= 485 && GameLoop::M_x <= 752 && GameLoop::M_y >= 496 && GameLoop::M_y <= 629)
 	{
 		startbitmap2->set_X(WIN_WIGHT / 2 - 140);
 		startbitmap2->set_Y(WIN_HEIGHT / 2 + 100);
@@ -50,10 +50,4 @@ void MainScene::DrawBitmap()
 	}
 
 	this->Draw();
-}
-
-void MainScene::MousePoint(int x, int y)
-{
-	M_x = x;
-	M_y = y;
 }

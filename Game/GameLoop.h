@@ -2,8 +2,13 @@
 
 #include <Windows.h>
 #include "Bitmap.h"
-#include "CharacterSelect.h"
 #include "mainScene.h"
+#include "CharacterSelect.h"
+
+// error C2143: 구문 오류 : ';'이(가) '*' 앞에 없습니다
+// 해결법 다음과 같이 class 로 정의해준다
+class MainScene;
+class CharacterSelect;
 
 enum { MAINSCENE = 100, SELECTSCENE };
 
@@ -15,8 +20,7 @@ public:
 
 	int selectMenu;
 
-	// 마우스 좌표 및 클릭 좌표
-	int M_x, M_y, C_x, C_y;
+	static int M_x, M_y, C_x, C_y;
 
 public:
 	MainScene* mainScene;
@@ -30,8 +34,5 @@ public:
 	~GameLoop();
 
 	void init();
-	//void Loop();
 	void Loop(HINSTANCE g_hInst, HWND hWnd);
-	//void DrawBitmap(HDC hdc);
-	void updata();
 };

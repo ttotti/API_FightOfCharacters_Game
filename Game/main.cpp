@@ -1,6 +1,7 @@
 #include <Windows.h> // 헤더파일
 
 #include "GameLoop.h"
+#include "macro.h"
 
 #pragma comment(linker,"/entry:WinMainCRTStartup /subsystem:console")
 
@@ -96,8 +97,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 	//	return 0;
 
 	case WM_MOUSEMOVE:
-		gameloop.M_x = LOWORD(lParam);
-		gameloop.M_y = HIWORD(lParam);
+		GameLoop::M_x = LOWORD(lParam);
+		GameLoop::M_y = HIWORD(lParam);
 
 		//switch (gameloop.selectMenu)
 		//{
@@ -122,18 +123,18 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT iMessage, WPARAM wParam, LPARAM lParam)
 		//default:
 		//	break;
 		//}
-		printf("x = %d  y = %d\n", LOWORD(lParam), HIWORD(lParam));
+		printf("x = %d  y = %d\n", GameLoop::M_x, GameLoop::M_y);
 		return 0;
 
 	case WM_LBUTTONDOWN:
-		gameloop.C_x = LOWORD(lParam);
-		gameloop.C_y = HIWORD(lParam);
+		GameLoop::C_x = LOWORD(lParam);
+		GameLoop::C_y = HIWORD(lParam);
 
 		return 0;
 
 	case WM_LBUTTONUP:
-		gameloop.C_x = 0;
-		gameloop.C_y = 0;
+		GameLoop::C_x = 0;
+		GameLoop::C_y = 0;
 
 		return 0;
 

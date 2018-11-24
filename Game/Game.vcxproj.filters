@@ -30,13 +30,16 @@
     <ClCompile Include="CharacterSelect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="mainScene.cpp">
-      <Filter>헤더 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Rect_point.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Layer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStart.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="mainScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -63,6 +66,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Layer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStart.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="macro.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -94,6 +103,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\chirno\Chirnoface.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
