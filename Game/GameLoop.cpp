@@ -14,12 +14,14 @@ GameLoop::~GameLoop()
 {
 	delete mainScene;
 	delete characterSelect;
+	delete gameStart;
 }
 
 void GameLoop::init()
 {
 	mainScene = NULL;
 	characterSelect = NULL;
+	gameStart = NULL;
 }
 
 void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
@@ -51,6 +53,12 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 
 		characterSelect->DrawBitmap();
 
+		if (characterSelect->ClickCharacter())
+		{
+			selectMenu = GAMESTART;
+			break;
+		}
+
 		if (C_x >= 50 && C_x <= characterSelect->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelect->Home_bitmap->GetHeight() + 666)
 		{
 			selectMenu = MAINSCENE;
@@ -58,7 +66,17 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 			characterSelect = NULL;
 		}
 
-		printf("SELECTSCENE\n");
+		//printf("SELECTSCENE\n");
+		break;
+
+	case GAMESTART:
+		if (gameStart == NULL)
+		{
+			gameStart = new GameStart(g_hInst, hWnd);
+		}
+
+		gameStart->DrawBitmap();
+
 		break;
 
 	default:

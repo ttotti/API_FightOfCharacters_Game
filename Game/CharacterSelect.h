@@ -2,9 +2,9 @@
 
 #include <Windows.h>
 
-#include "Bitmap.h"
 #include "Layer.h"
 #include "GameLoop.h"
+#include "macro.h"
 
 class CharacterSelect :public Layer
 {

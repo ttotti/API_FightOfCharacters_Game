@@ -55,17 +55,12 @@ void CharacterSelect::DrawBitmap()
 
 	chirnoface->set_X(WIN_WIGHT/2-300);
 	chirnoface->set_Y(WIN_HEIGHT/2-100);
-	chirnoface->set_W(150);
-	chirnoface->set_H(150);
 	this->Draw_TransparentBlt(chirnoface, 255, 0, 255);
 
 	hong_meiling->set_X(chirnoface->get_X()+chirnoface->GetWidth());
 	hong_meiling->set_Y(WIN_HEIGHT / 2 - 100);
-	hong_meiling->set_W(150);
-	hong_meiling->set_H(150);
 	this->Draw_TransparentBlt(hong_meiling, 255, 0, 255);
 	
-
 	if (GameLoop::M_x >= 50 && GameLoop::M_x <= Home_bitmap->GetWidth() + 50 && GameLoop::M_y >= 666 && GameLoop::M_y <= Home_bitmap->GetHeight() + 666)
 	{
 		ClickHome_bitmap->set_X(50);
@@ -78,5 +73,23 @@ void CharacterSelect::DrawBitmap()
 
 bool CharacterSelect::ClickCharacter()
 {
+	printf("chirnoface->get_X() = %f\n", chirnoface->get_X());
+	printf("chirnoface->GetWidth() = %d\n", chirnoface->GetWidth());
+	printf("chirnoface->get_Y() = %f\n", chirnoface->get_Y());
+	printf("chirnoface->GetHeight() = %d\n", chirnoface->GetHeight());
+
+	printf("GameLoop::C_x = %d\n", GameLoop::C_x);
+	printf("GameLoop::C_y = %d\n\n", GameLoop::C_y);
+
+
+	if (GameLoop::C_x >= chirnoface->get_X() && GameLoop::C_x <= chirnoface->get_X()+chirnoface->GetWidth() && GameLoop::C_y >= chirnoface->get_Y() && GameLoop::C_y <= chirnoface->get_Y()+chirnoface->GetHeight())
+	{
+		selectCharacter = Chirno;
+
+		printf("치르노 클릭!\n");
+
+		return true;
+	}
+
 	return false;
 }

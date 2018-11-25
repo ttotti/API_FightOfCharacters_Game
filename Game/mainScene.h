@@ -2,7 +2,6 @@
 
 #include "GameLoop.h"
 
-#include "Bitmap.h"
 #include "Layer.h"
 
 class MainScene :public Layer
