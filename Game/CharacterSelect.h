@@ -1,7 +1,5 @@
 #pragma once
 
-#include <Windows.h>
-
 #include "Layer.h"
 #include "GameLoop.h"
 #include "macro.h"

@@ -13,15 +13,17 @@ GameLoop::GameLoop()
 GameLoop::~GameLoop()
 {
 	delete mainScene;
-	delete characterSelect;
-	delete gameStart;
+	delete characterSelectScene;
+	delete gameStartScene;
+	delete spellSelectScene;
 }
 
 void GameLoop::init()
 {
 	mainScene = NULL;
-	characterSelect = NULL;
-	gameStart = NULL;
+	characterSelectScene = NULL;
+	gameStartScene = NULL;
+	spellSelectScene = NULL;
 }
 
 void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
@@ -46,36 +48,46 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		break;
 
 	case SELECTSCENE:
-		if (characterSelect == NULL)
+		if (characterSelectScene == NULL)
 		{
-			characterSelect = new CharacterSelect(g_hInst, hWnd);
+			characterSelectScene = new CharacterSelect(g_hInst, hWnd);
 		}
 
-		characterSelect->DrawBitmap();
+		characterSelectScene->DrawBitmap();
 
-		if (characterSelect->ClickCharacter())
+		if (characterSelectScene->ClickCharacter())
 		{
-			selectMenu = GAMESTART;
+			selectMenu = SPELLSELECTSCENE;
 			break;
 		}
 
-		if (C_x >= 50 && C_x <= characterSelect->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelect->Home_bitmap->GetHeight() + 666)
+		if (C_x >= 50 && C_x <= characterSelectScene->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelectScene->Home_bitmap->GetHeight() + 666)
 		{
 			selectMenu = MAINSCENE;
-			delete characterSelect;
-			characterSelect = NULL;
+			delete characterSelectScene;
+			characterSelectScene = NULL;
 		}
 
 		//printf("SELECTSCENE\n");
 		break;
 
-	case GAMESTART:
-		if (gameStart == NULL)
+	case SPELLSELECTSCENE:
+		if (spellSelectScene == NULL)
 		{
-			gameStart = new GameStart(g_hInst, hWnd);
+			spellSelectScene = new SpellSelectScene(g_hInst, hWnd);
 		}
 
-		gameStart->DrawBitmap();
+		spellSelectScene->DrawBitmap();
+
+		break;
+
+	case GAMESTARTSCENE:
+		if (gameStartScene == NULL)
+		{
+			gameStartScene = new GameStart(g_hInst, hWnd);
+		}
+
+		gameStartScene->DrawBitmap();
 
 		break;
 

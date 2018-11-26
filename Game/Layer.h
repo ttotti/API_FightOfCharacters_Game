@@ -5,13 +5,14 @@
 
 class Layer
 {
-public:
+private:
 	HDC hdc, MemDC, BackDC;
 	HWND hWnd;
 
 	HBITMAP Image;
 	HBITMAP BackImage;
 	HBITMAP hPreBit;
+
 public:
 	Layer();
 	Layer(HWND hWnd);
@@ -25,4 +26,6 @@ public:
 	void Draw_BitBlt(gBitmap* bitmap);
 	void Draw_StretchBit(gBitmap* bitmap);
 	void Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b);
+
+	virtual void DrawBitmap() = 0;
 };

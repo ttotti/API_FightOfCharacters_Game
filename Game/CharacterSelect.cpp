@@ -73,13 +73,13 @@ void CharacterSelect::DrawBitmap()
 
 bool CharacterSelect::ClickCharacter()
 {
-	printf("chirnoface->get_X() = %f\n", chirnoface->get_X());
-	printf("chirnoface->GetWidth() = %d\n", chirnoface->GetWidth());
-	printf("chirnoface->get_Y() = %f\n", chirnoface->get_Y());
-	printf("chirnoface->GetHeight() = %d\n", chirnoface->GetHeight());
+	//printf("chirnoface->get_X() = %f\n", chirnoface->get_X());
+	//printf("chirnoface->GetWidth() = %d\n", chirnoface->GetWidth());
+	//printf("chirnoface->get_Y() = %f\n", chirnoface->get_Y());
+	//printf("chirnoface->GetHeight() = %d\n", chirnoface->GetHeight());
 
-	printf("GameLoop::C_x = %d\n", GameLoop::C_x);
-	printf("GameLoop::C_y = %d\n\n", GameLoop::C_y);
+	//printf("GameLoop::C_x = %d\n", GameLoop::C_x);
+	//printf("GameLoop::C_y = %d\n\n", GameLoop::C_y);
 
 
 	if (GameLoop::C_x >= chirnoface->get_X() && GameLoop::C_x <= chirnoface->get_X()+chirnoface->GetWidth() && GameLoop::C_y >= chirnoface->get_Y() && GameLoop::C_y <= chirnoface->get_Y()+chirnoface->GetHeight())

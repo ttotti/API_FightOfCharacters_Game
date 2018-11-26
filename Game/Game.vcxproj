@@ -143,34 +143,37 @@
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="GameLoop.cpp" />
-    <ClCompile Include="GameStart.cpp" />
+    <ClCompile Include="GameStartScene.cpp" />
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainScene.cpp" />
     <ClCompile Include="Rect_point.cpp" />
+    <ClCompile Include="SpellSelectScene.cpp" />
     <ClCompile Include="tilePoint.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="GameLoop.h" />
-    <ClInclude Include="GameStart.h" />
+    <ClInclude Include="GameStartScene.h" />
     <ClInclude Include="Layer.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="mainScene.h" />
     <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SpellSelectScene.h" />
     <ClInclude Include="tilePoint.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\resource\chirno\Chirnoface.bmp" />
-    <Image Include="..\resource\Home.bmp" />
+    <Image Include="..\resource\spellScene.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />
+    <Image Include="..\resource\chirno\Chirnoface.bmp" />
     <Image Include="..\resource\GameStart.bmp" />
     <Image Include="..\resource\GameStart2.bmp" />
+    <Image Include="..\resource\Home.bmp" />
     <Image Include="..\resource\HomeClick.bmp" />
     <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp" />
     <Image Include="..\resource\mainScene.bmp" />

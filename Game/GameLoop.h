@@ -4,7 +4,8 @@
 #include "Bitmap.h"
 #include "mainScene.h"
 #include "CharacterSelect.h"
-#include "GameStart.h"
+#include "GameStartScene.h"
+#include "SpellSelectScene.h"
 
 // error C2143: 구문 오류 : ';'이(가) '*' 앞에 없습니다
 // 해결법 다음과 같이 class 로 정의해준다
@@ -12,7 +13,7 @@ class MainScene;
 class CharacterSelect;
 class GameStart;
 
-enum { MAINSCENE = 100, SELECTSCENE, GAMESTART };
+enum { MAINSCENE = 100, SELECTSCENE, GAMESTARTSCENE, SPELLSELECTSCENE };
 
 class GameLoop
 {
@@ -26,8 +27,9 @@ public:
 
 public:
 	MainScene* mainScene;
-	CharacterSelect* characterSelect;
-	GameStart* gameStart;
+	CharacterSelect* characterSelectScene;
+	GameStart* gameStartScene;
+	SpellSelectScene* spellSelectScene;
 
 public:
 	gBitmap map; // Bitmap 클래스 변수

@@ -8,7 +8,7 @@
 //</gdiplus.h>
 
 #define WIN_WIGHT 1250
-#define WIN_HEIGHT 795
+#define WIN_HEIGHT 760
 
 class gBitmap
 {

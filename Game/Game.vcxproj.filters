@@ -13,12 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{edf36cf3-4be1-4b05-80ba-76554d9298ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Layer">
+      <UniqueIdentifier>{c17e13ad-5c8f-4f7c-b0df-d46cc149b248}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Bitmap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="tilePoint.cpp">
@@ -27,51 +30,60 @@
     <ClCompile Include="GameLoop.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="CharacterSelect.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Rect_point.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Layer.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="GameStart.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="mainScene.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterSelect.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SpellSelectScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStartScene.cpp">
+      <Filter>소스 파일\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>소스 파일\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>소스 파일\Layer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="resource.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Bitmap.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="tilePoint.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="GameLoop.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="CharacterSelect.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="mainScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="Rect_point.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Layer.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameStart.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="macro.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mainScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterSelect.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellSelectScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStartScene.h">
+      <Filter>소스 파일\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>소스 파일\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>소스 파일\Layer</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -81,10 +93,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\resource\map.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="..\resource\mainScene.bmp">
+    <Image Include="..\resource\CharacterSelect.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\GameStart.bmp">
@@ -93,19 +102,25 @@
     <Image Include="..\resource\GameStart2.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="..\resource\CharacterSelect.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="..\resource\Home.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\HomeClick.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
+    <Image Include="..\resource\mainScene.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\map.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
     <Image Include="..\resource\chirno\Chirnoface.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\spellScene.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
