@@ -21,20 +21,20 @@ void Layer::Init()
 	hdc = GetDC(hWnd);
 	MemDC = CreateCompatibleDC(hdc);
 	BackDC = CreateCompatibleDC(hdc);
-	BackImage = CreateCompatibleBitmap(hdc, WIN_WIGHT, WIN_HEIGHT);
+	b_BackImage = CreateCompatibleBitmap(hdc, WIN_WIGHT, WIN_HEIGHT);
 
-	hPreBit = (HBITMAP)SelectObject(MemDC, BackImage);
+	b_hPreBit = (HBITMAP)SelectObject(MemDC, b_BackImage);
 }
 
 void Layer::DeleteImage()
 {
-	SelectObject(MemDC, hPreBit);
+	SelectObject(MemDC, b_hPreBit);
 
 	DeleteObject(BackDC);
-	DeleteObject(BackImage);
+	DeleteObject(b_BackImage);
 	DeleteDC(MemDC);
 
-	DeleteObject(Image);
+	DeleteObject(b_Image);
 
 	ReleaseDC(hWnd, hdc);
 }
@@ -67,4 +67,11 @@ void Layer::Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b)
 	SelectObject(BackDC, bitmap->Getbitmap());
 
 	TransparentBlt(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->GetWidth(), bitmap->GetHeight(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), RGB(r, g, b));
+}
+
+void Layer::Draw_PNGImage(PNG_Image* Image)
+{
+	Graphics graphics(hdc);
+
+	graphics.DrawImage(Image->GetImage(), Image->get_X(), Image->get_Y());
 }

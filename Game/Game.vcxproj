@@ -147,6 +147,7 @@
     <ClCompile Include="Layer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mainScene.cpp" />
+    <ClCompile Include="PNG_Image.cpp" />
     <ClCompile Include="Rect_point.cpp" />
     <ClCompile Include="SpellSelectScene.cpp" />
     <ClCompile Include="tilePoint.cpp" />
@@ -159,6 +160,7 @@
     <ClInclude Include="Layer.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="mainScene.h" />
+    <ClInclude Include="PNG_Image.h" />
     <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SpellSelectScene.h" />
@@ -168,6 +170,7 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\resource\chirno\Chirnoface.png" />
     <Image Include="..\resource\spellScene.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />
     <Image Include="..\resource\chirno\Chirnoface.bmp" />
@@ -178,6 +181,7 @@
     <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp" />
     <Image Include="..\resource\mainScene.bmp" />
     <Image Include="..\resource\map.bmp" />
+    <Image Include="..\resource\spellScenemap.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

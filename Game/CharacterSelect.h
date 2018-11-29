@@ -16,6 +16,8 @@ public:
 	gBitmap* chirnoface;
 	gBitmap* hong_meiling;
 
+	PNG_Image* p_chirnoface;
+
 public:
 	CharacterSelect();
 	CharacterSelect(HINSTANCE g_hInst, HWND hWnd);

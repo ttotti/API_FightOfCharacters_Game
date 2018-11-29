@@ -17,12 +17,15 @@ CharacterSelect::CharacterSelect(HINSTANCE g_hInst, HWND hWnd)
 	Home_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOME);
 	ClickHome_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOMECLICK);
 
-
 	chirnoface = new gBitmap;
 	hong_meiling = new gBitmap;
 
 	chirnoface->SetBitmap(hWnd, g_hInst, IDB_CHIRNOFACE);
 	hong_meiling->SetBitmap(hWnd, g_hInst, IDB_HONG);
+
+	p_chirnoface = new PNG_Image;
+
+	p_chirnoface->LoadPNG(g_hInst, IDB_pCHIRNOFACE);
 }
 
 CharacterSelect::~CharacterSelect()
@@ -38,6 +41,9 @@ CharacterSelect::~CharacterSelect()
 	ClickHome_bitmap = NULL;
 
 	chirnoface = NULL;
+
+	delete p_chirnoface;
+	p_chirnoface = NULL;
 }
 
 void CharacterSelect::init(HINSTANCE g_hInst, HWND hWnd)
@@ -69,6 +75,13 @@ void CharacterSelect::DrawBitmap()
 	}
 
 	this->Draw();
+
+
+
+	p_chirnoface->set_X(10);
+	p_chirnoface->set_Y(10);
+
+	this->Draw_PNGImage(p_chirnoface);
 }
 
 bool CharacterSelect::ClickCharacter()

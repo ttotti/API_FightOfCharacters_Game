@@ -51,6 +51,9 @@
     <ClCompile Include="Layer.cpp">
       <Filter>소스 파일\Layer</Filter>
     </ClCompile>
+    <ClCompile Include="PNG_Image.cpp">
+      <Filter>소스 파일\Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tilePoint.h">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="PNG_Image.h">
+      <Filter>소스 파일\Layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +127,12 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\resource\spellScene.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\Chirnoface.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\spellScenemap.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

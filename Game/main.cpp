@@ -4,6 +4,7 @@
 #include "macro.h"
 
 #pragma comment(linker,"/entry:WinMainCRTStartup /subsystem:console")
+#pragma comment(lib,"Gdiplus.lib")
 
 //#ifdef UNICODE
 //#pragma comment(linker, "/entry:wWinMainCRTStartup /subsystem:console")
