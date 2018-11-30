@@ -59,14 +59,14 @@ void CharacterSelect::DrawBitmap()
 	Home_bitmap->set_Y(666);
 	this->Draw_BitBlt(Home_bitmap);
 
-	chirnoface->set_X(WIN_WIGHT/2-300);
-	chirnoface->set_Y(WIN_HEIGHT/2-100);
-	this->Draw_TransparentBlt(chirnoface, 255, 0, 255);
+	p_chirnoface->set_X(WIN_WIGHT/2-300);
+	p_chirnoface->set_Y(WIN_HEIGHT/2-100);
+	this->Draw_PNGImage(p_chirnoface);
 
-	hong_meiling->set_X(chirnoface->get_X()+chirnoface->GetWidth());
+	hong_meiling->set_X(p_chirnoface->get_X() + p_chirnoface->GetWidth());
 	hong_meiling->set_Y(WIN_HEIGHT / 2 - 100);
 	this->Draw_TransparentBlt(hong_meiling, 255, 0, 255);
-	
+
 	if (GameLoop::M_x >= 50 && GameLoop::M_x <= Home_bitmap->GetWidth() + 50 && GameLoop::M_y >= 666 && GameLoop::M_y <= Home_bitmap->GetHeight() + 666)
 	{
 		ClickHome_bitmap->set_X(50);
@@ -75,13 +75,6 @@ void CharacterSelect::DrawBitmap()
 	}
 
 	this->Draw();
-
-
-
-	p_chirnoface->set_X(10);
-	p_chirnoface->set_Y(10);
-
-	this->Draw_PNGImage(p_chirnoface);
 }
 
 bool CharacterSelect::ClickCharacter()

@@ -69,9 +69,9 @@ void Layer::Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b)
 	TransparentBlt(MemDC, bitmap->get_X(), bitmap->get_Y(), bitmap->GetWidth(), bitmap->GetHeight(), BackDC, 0, 0, bitmap->GetWidth(), bitmap->GetHeight(), RGB(r, g, b));
 }
 
-void Layer::Draw_PNGImage(PNG_Image* Image)
+void Layer::Draw_PNGImage(PNG_Image* image)
 {
-	Graphics graphics(hdc);
+	Graphics graphics(MemDC);
 
-	graphics.DrawImage(Image->GetImage(), Image->get_X(), Image->get_Y());
+	graphics.DrawImage(image->GetImage(), image->get_X(), image->get_Y(), image->get_W(), image->get_H());
 }

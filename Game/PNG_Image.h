@@ -37,6 +37,7 @@ public:
 
 public:
 	PNG_Image();
+	PNG_Image(HMODULE hModule, int IpPngName);
 	~PNG_Image();
 
 	Image* LoadPNG(HMODULE hModule, LPCWSTR ResourceName);

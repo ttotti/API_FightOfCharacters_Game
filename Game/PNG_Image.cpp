@@ -5,6 +5,16 @@ PNG_Image::PNG_Image()
 	GdiplusStartup(&gdiplusToken, &gdiplusStartupInput, NULL);
 }
 
+PNG_Image::PNG_Image(HMODULE hModule, int IpPngName)
+{
+	image = LoadPNG(hModule, MAKEINTRESOURCE(IpPngName));
+
+	x = 0;
+	y = 0;
+	w = GetWidth();
+	h = GetHeight();
+}
+
 PNG_Image::~PNG_Image()
 {
 	delete image;
@@ -34,6 +44,11 @@ Image * PNG_Image::LoadPNG(HMODULE hModule, LPCWSTR ResourceName)
 void PNG_Image::LoadPNG(HMODULE hModule, int IpPngName)
 {
 	image = LoadPNG(hModule, MAKEINTRESOURCE(IpPngName));
+
+	x = 0;
+	y = 0;
+	w = GetWidth();
+	h = GetHeight();
 }
 
 Image* PNG_Image::GetImage()
@@ -63,12 +78,12 @@ float PNG_Image::get_H()
 
 int PNG_Image::GetWidth()
 {
-	return 0;
+	return image->GetWidth();
 }
 
 int PNG_Image::GetHeight()
 {
-	return 0;
+	return image->GetHeight();
 }
 
 void PNG_Image::set_X(float x)
