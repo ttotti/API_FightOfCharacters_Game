@@ -14,12 +14,18 @@
 #define IDB_HONG                        111
 #define IDB_SPELLSCENE                  112
 #define IDB_pCHIRNOFACE                 115
+#define IDB_pChirnoCard_1               117
+#define IDB_pChirnoCard_2               118
+#define IDB_pChirnoCard_3               119
+#define IDB_pChirnoCard_4               120
+#define IDB_PNG1                        121
+#define IDB_Cardmap                     121
 
 // Next default values for new objects
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        116
+#define _APS_NEXT_RESOURCE_VALUE        122
 #define _APS_NEXT_COMMAND_VALUE         40001
 #define _APS_NEXT_CONTROL_VALUE         1001
 #define _APS_NEXT_SYMED_VALUE           101

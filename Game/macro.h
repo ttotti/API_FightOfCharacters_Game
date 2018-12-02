@@ -1,8 +1,12 @@
 #pragma once
 
+#include "Chirno.h"
+
 // Character number
 enum
 {
-	Chirno = 1001,
-	Hong_Meiling
+	m_Chirno = 1001,
+	m_Hong_Meiling
 };
+
+class Chirno;

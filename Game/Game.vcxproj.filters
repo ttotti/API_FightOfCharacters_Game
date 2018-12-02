@@ -19,6 +19,18 @@
     <Filter Include="소스 파일\Layer">
       <UniqueIdentifier>{c17e13ad-5c8f-4f7c-b0df-d46cc149b248}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\Cirno">
+      <UniqueIdentifier>{37aa1dd9-190c-47e0-8723-5887ed3d90b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Cirno\ChirnoCard">
+      <UniqueIdentifier>{febbe4c0-8be0-4f9d-9d56-8c2d2d0408b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="리소스 파일\Hong_Meiling">
+      <UniqueIdentifier>{ba44550d-80b2-4264-976a-3267bee146fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Character">
+      <UniqueIdentifier>{c9df8ef9-aabb-4f8e-b195-a80a51b0dc16}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +65,9 @@
     </ClCompile>
     <ClCompile Include="PNG_Image.cpp">
       <Filter>소스 파일\Layer</Filter>
+    </ClCompile>
+    <ClCompile Include="Chirno.cpp">
+      <Filter>소스 파일\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +107,9 @@
     <ClInclude Include="PNG_Image.h">
       <Filter>소스 파일\Layer</Filter>
     </ClInclude>
+    <ClInclude Include="Chirno.h">
+      <Filter>소스 파일\Character</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">
@@ -120,19 +138,34 @@
     <Image Include="..\resource\map.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="..\resource\chirno\Chirnoface.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
-    <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp">
-      <Filter>리소스 파일</Filter>
-    </Image>
     <Image Include="..\resource\spellScene.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="..\resource\chirno\Chirnoface.png">
+    <Image Include="..\resource\spellScenemap.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="..\resource\spellScenemap.bmp">
+    <Image Include="..\resource\chirno\Chirnoface.bmp">
+      <Filter>리소스 파일\Cirno</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\Chirnoface.png">
+      <Filter>리소스 파일\Cirno</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_1.png">
+      <Filter>리소스 파일\Cirno\ChirnoCard</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_2.png">
+      <Filter>리소스 파일\Cirno\ChirnoCard</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_3.png">
+      <Filter>리소스 파일\Cirno\ChirnoCard</Filter>
+    </Image>
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_4.png">
+      <Filter>리소스 파일\Cirno\ChirnoCard</Filter>
+    </Image>
+    <Image Include="..\resource\Hong_Meiling\Hong_Meiling_face.bmp">
+      <Filter>리소스 파일\Hong_Meiling</Filter>
+    </Image>
+    <Image Include="..\resource\Cardmap.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

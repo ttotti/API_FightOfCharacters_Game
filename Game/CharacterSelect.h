@@ -13,7 +13,6 @@ public:
 	gBitmap* Home_bitmap;
 	gBitmap* ClickHome_bitmap;
 
-	gBitmap* chirnoface;
 	gBitmap* hong_meiling;
 
 	PNG_Image* p_chirnoface;

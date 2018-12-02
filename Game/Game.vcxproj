@@ -142,6 +142,7 @@
   <ItemGroup>
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
+    <ClCompile Include="Chirno.cpp" />
     <ClCompile Include="GameLoop.cpp" />
     <ClCompile Include="GameStartScene.cpp" />
     <ClCompile Include="Layer.cpp" />
@@ -155,6 +156,7 @@
   <ItemGroup>
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="CharacterSelect.h" />
+    <ClInclude Include="Chirno.h" />
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameStartScene.h" />
     <ClInclude Include="Layer.h" />
@@ -170,6 +172,11 @@
     <ResourceCompile Include="Game.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\resource\Cardmap.png" />
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_1.png" />
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_2.png" />
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_3.png" />
+    <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_4.png" />
     <Image Include="..\resource\chirno\Chirnoface.png" />
     <Image Include="..\resource\spellScene.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />

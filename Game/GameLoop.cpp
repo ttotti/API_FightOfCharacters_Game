@@ -64,6 +64,8 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		if (C_x >= 50 && C_x <= characterSelectScene->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelectScene->Home_bitmap->GetHeight() + 666)
 		{
 			selectMenu = MAINSCENE;
+			character_number = characterSelectScene->selectCharacter;
+
 			delete characterSelectScene;
 			characterSelectScene = NULL;
 		}

@@ -17,14 +17,10 @@ CharacterSelect::CharacterSelect(HINSTANCE g_hInst, HWND hWnd)
 	Home_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOME);
 	ClickHome_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOMECLICK);
 
-	chirnoface = new gBitmap;
 	hong_meiling = new gBitmap;
-
-	chirnoface->SetBitmap(hWnd, g_hInst, IDB_CHIRNOFACE);
 	hong_meiling->SetBitmap(hWnd, g_hInst, IDB_HONG);
 
 	p_chirnoface = new PNG_Image;
-
 	p_chirnoface->LoadPNG(g_hInst, IDB_pCHIRNOFACE);
 }
 
@@ -34,13 +30,9 @@ CharacterSelect::~CharacterSelect()
 	delete Home_bitmap;
 	delete ClickHome_bitmap;
 
-	delete chirnoface;
-
 	BG_bitmap = NULL;
 	Home_bitmap = NULL;
 	ClickHome_bitmap = NULL;
-
-	chirnoface = NULL;
 
 	delete p_chirnoface;
 	p_chirnoface = NULL;
@@ -88,9 +80,9 @@ bool CharacterSelect::ClickCharacter()
 	//printf("GameLoop::C_y = %d\n\n", GameLoop::C_y);
 
 
-	if (GameLoop::C_x >= chirnoface->get_X() && GameLoop::C_x <= chirnoface->get_X()+chirnoface->GetWidth() && GameLoop::C_y >= chirnoface->get_Y() && GameLoop::C_y <= chirnoface->get_Y()+chirnoface->GetHeight())
+	if (GameLoop::C_x >= p_chirnoface->get_X() && GameLoop::C_x <= p_chirnoface->get_X() + p_chirnoface->GetWidth() && GameLoop::C_y >= p_chirnoface->get_Y() && GameLoop::C_y <= p_chirnoface->get_Y() + p_chirnoface->GetHeight())
 	{
-		selectCharacter = Chirno;
+		selectCharacter = m_Chirno;
 
 		printf("치르노 클릭!\n");
 
