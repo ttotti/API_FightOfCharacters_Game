@@ -14,7 +14,7 @@ gBitmap::~gBitmap()
 void gBitmap::SetBitmap(HWND hWnd, HINSTANCE hInstance, int IpBitmapName)
 {
 	map = LoadBitmap(hInstance, MAKEINTRESOURCE(IpBitmapName));
-}
+} 
 
 int gBitmap::GetWidth()
 {

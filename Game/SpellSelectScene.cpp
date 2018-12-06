@@ -10,13 +10,16 @@ SpellSelectScene::SpellSelectScene(HINSTANCE g_hInst, HWND hWnd)
 	background = new gBitmap;
 
 	background->SetBitmap(hWnd, g_hInst, IDB_SPELLSCENE);
+
+	chirno = new Chirno(g_hInst, hWnd);
 }
 
 SpellSelectScene::~SpellSelectScene()
 {
 	delete background;
-
 	background = NULL;
+
+	printf("SpellSelectScene Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void SpellSelectScene::DrawBitmap()
@@ -29,6 +32,14 @@ void SpellSelectScene::DrawBitmap()
 			background->set_Y(j*background->GetHeight());
 			this->Draw_BitBlt(background);
 		}
+	}
+
+	if (seleteCharacter == m_Chirno)
+	{
+		//chirno->DrawBitmap();
+		chirno->ChirnoCard[0]->set_X(100);
+		chirno->ChirnoCard[0]->set_AllPoint(300, 300, 100, 100);
+		this->Draw_PNGImage(chirno->ChirnoCard[0]);
 	}
 
 	this->Draw();

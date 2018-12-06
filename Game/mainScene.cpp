@@ -25,6 +25,8 @@ MainScene::~MainScene()
 	mainbitmap = NULL;
 	startbitmap = NULL;
 	startbitmap2 = NULL;
+
+	printf("MainScene Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void MainScene::init(HINSTANCE g_hInst, HWND hWnd)

@@ -2,14 +2,18 @@
 
 #include "Layer.h"
 #include "GameLoop.h"
+#include "macro.h"
 
-//template <typename T_Character>
+#include "Chirno.h"
 
 class SpellSelectScene :public Layer
 {
 public:
 	gBitmap* background;
-	//T_Character d;
+
+	Chirno* chirno;
+
+	int seleteCharacter;
 
 public:
 	SpellSelectScene();

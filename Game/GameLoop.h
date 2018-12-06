@@ -38,9 +38,6 @@ public:
 	SpellSelectScene* spellSelectScene;
 
 public:
-	gBitmap map; // Bitmap 클래스 변수
-
-public:
 	GameLoop();
 	~GameLoop();
 

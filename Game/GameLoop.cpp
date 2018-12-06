@@ -16,6 +16,8 @@ GameLoop::~GameLoop()
 	delete characterSelectScene;
 	delete gameStartScene;
 	delete spellSelectScene;
+
+	printf("GameLoop Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void GameLoop::init()
@@ -58,13 +60,18 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		if (characterSelectScene->ClickCharacter())
 		{
 			selectMenu = SPELLSELECTSCENE;
+
+			character_number = characterSelectScene->selectCharacter;
+
+			delete characterSelectScene;
+			characterSelectScene = NULL;
+
 			break;
 		}
 
 		if (C_x >= 50 && C_x <= characterSelectScene->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= characterSelectScene->Home_bitmap->GetHeight() + 666)
 		{
 			selectMenu = MAINSCENE;
-			character_number = characterSelectScene->selectCharacter;
 
 			delete characterSelectScene;
 			characterSelectScene = NULL;
@@ -79,6 +86,7 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 			spellSelectScene = new SpellSelectScene(g_hInst, hWnd);
 		}
 
+		spellSelectScene->seleteCharacter = character_number;
 		spellSelectScene->DrawBitmap();
 
 		break;

@@ -69,17 +69,11 @@
     <ClCompile Include="Chirno.cpp">
       <Filter>소스 파일\Character</Filter>
     </ClCompile>
+    <ClCompile Include="CharacterManage.cpp">
+      <Filter>소스 파일\Character</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="tilePoint.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="GameLoop.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Rect_point.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="macro.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -108,6 +102,18 @@
       <Filter>소스 파일\Layer</Filter>
     </ClInclude>
     <ClInclude Include="Chirno.h">
+      <Filter>소스 파일\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoop.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Rect_point.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="tilePoint.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterManage.h">
       <Filter>소스 파일\Character</Filter>
     </ClInclude>
   </ItemGroup>

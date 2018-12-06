@@ -141,6 +141,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Bitmap.cpp" />
+    <ClCompile Include="CharacterManage.cpp" />
     <ClCompile Include="CharacterSelect.cpp" />
     <ClCompile Include="Chirno.cpp" />
     <ClCompile Include="GameLoop.cpp" />
@@ -155,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bitmap.h" />
+    <ClInclude Include="CharacterManage.h" />
     <ClInclude Include="CharacterSelect.h" />
     <ClInclude Include="Chirno.h" />
     <ClInclude Include="GameLoop.h" />

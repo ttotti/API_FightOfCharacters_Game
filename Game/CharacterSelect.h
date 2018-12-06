@@ -7,8 +7,6 @@
 class CharacterSelect :public Layer
 {
 public:
-	int selectCharacter;
-
 	gBitmap* BG_bitmap;
 	gBitmap* Home_bitmap;
 	gBitmap* ClickHome_bitmap;
@@ -16,6 +14,8 @@ public:
 	gBitmap* hong_meiling;
 
 	PNG_Image* p_chirnoface;
+
+	int selectCharacter;
 
 public:
 	CharacterSelect();

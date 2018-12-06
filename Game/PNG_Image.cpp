@@ -19,6 +19,7 @@ PNG_Image::~PNG_Image()
 {
 	delete image;
 	GdiplusShutdown(gdiplusToken);
+	printf("PNG Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 Image * PNG_Image::LoadPNG(HMODULE hModule, LPCWSTR ResourceName)

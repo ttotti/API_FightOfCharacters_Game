@@ -3,6 +3,7 @@
 //#pragma comment(lib,"Gdiplus.lib")
 
 #include <Windows.h>
+#include <stdio.h>
 #include <gdiplus.h>
 
 using namespace Gdiplus;

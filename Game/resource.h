@@ -14,11 +14,12 @@
 #define IDB_HONG                        111
 #define IDB_SPELLSCENE                  112
 #define IDB_pCHIRNOFACE                 115
+
 #define IDB_pChirnoCard_1               117
 #define IDB_pChirnoCard_2               118
 #define IDB_pChirnoCard_3               119
 #define IDB_pChirnoCard_4               120
-#define IDB_PNG1                        121
+
 #define IDB_Cardmap                     121
 
 // Next default values for new objects

@@ -15,8 +15,9 @@ GameStart::GameStart(HINSTANCE g_hInst, HWND hWnd)
 GameStart::~GameStart()
 {
 	delete gamemap;
-
 	gamemap = NULL;
+
+	printf("GameStart Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void GameStart::DrawBitmap()

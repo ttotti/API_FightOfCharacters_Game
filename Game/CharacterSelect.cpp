@@ -7,14 +7,13 @@ CharacterSelect::CharacterSelect()
 CharacterSelect::CharacterSelect(HINSTANCE g_hInst, HWND hWnd)
 	:Layer(hWnd)
 {
-	selectCharacter = 0;
-
 	BG_bitmap = new gBitmap;
-	Home_bitmap = new gBitmap;
-	ClickHome_bitmap = new gBitmap;
-
 	BG_bitmap->SetBitmap(hWnd, g_hInst, IDB_SELECT);
+
+	Home_bitmap = new gBitmap;
 	Home_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOME);
+
+	ClickHome_bitmap = new gBitmap;
 	ClickHome_bitmap->SetBitmap(hWnd, g_hInst, IDB_HOMECLICK);
 
 	hong_meiling = new gBitmap;
@@ -34,8 +33,13 @@ CharacterSelect::~CharacterSelect()
 	Home_bitmap = NULL;
 	ClickHome_bitmap = NULL;
 
+	delete hong_meiling;
+	hong_meiling = NULL;
+
 	delete p_chirnoface;
 	p_chirnoface = NULL;
+
+	printf("CharacterSelectScene Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void CharacterSelect::init(HINSTANCE g_hInst, HWND hWnd)
