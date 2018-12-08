@@ -13,7 +13,7 @@ public:
 
 	Chirno* chirno;
 
-	int seleteCharacter;
+	int selectCharacter;
 
 public:
 	SpellSelectScene();
@@ -21,4 +21,6 @@ public:
 	~SpellSelectScene();
 
 	void DrawBitmap();
+
+	void setCharacter(int select);
 };

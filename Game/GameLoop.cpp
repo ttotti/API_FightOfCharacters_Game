@@ -86,7 +86,7 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 			spellSelectScene = new SpellSelectScene(g_hInst, hWnd);
 		}
 
-		spellSelectScene->seleteCharacter = character_number;
+		spellSelectScene->setCharacter(character_number);
 		spellSelectScene->DrawBitmap();
 
 		break;

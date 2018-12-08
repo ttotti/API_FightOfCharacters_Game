@@ -8,5 +8,3 @@ enum
 	m_Chirno = 1001,
 	m_Hong_Meiling
 };
-
-class Chirno;

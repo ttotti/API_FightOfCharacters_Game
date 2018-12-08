@@ -34,7 +34,7 @@ void SpellSelectScene::DrawBitmap()
 		}
 	}
 
-	if (seleteCharacter == m_Chirno)
+	if (selectCharacter == m_Chirno)
 	{
 		//chirno->DrawBitmap();
 		chirno->ChirnoCard[0]->set_X(100);
@@ -43,4 +43,9 @@ void SpellSelectScene::DrawBitmap()
 	}
 
 	this->Draw();
+}
+
+void SpellSelectScene::setCharacter(int character_number)
+{
+	selectCharacter = character_number;
 }

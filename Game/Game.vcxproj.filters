@@ -116,6 +116,12 @@
     <ClInclude Include="CharacterManage.h">
       <Filter>소스 파일\Character</Filter>
     </ClInclude>
+    <ClInclude Include="LinkedQueue.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Game.rc">

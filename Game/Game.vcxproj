@@ -162,8 +162,10 @@
     <ClInclude Include="GameLoop.h" />
     <ClInclude Include="GameStartScene.h" />
     <ClInclude Include="Layer.h" />
+    <ClInclude Include="LinkedQueue.h" />
     <ClInclude Include="macro.h" />
     <ClInclude Include="mainScene.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="PNG_Image.h" />
     <ClInclude Include="Rect_point.h" />
     <ClInclude Include="resource.h" />
