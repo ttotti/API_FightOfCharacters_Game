@@ -9,6 +9,7 @@ class Layer
 private:
 	HDC hdc, MemDC, BackDC;
 	HWND hWnd;
+	HINSTANCE g_hInst;
 
 	HBITMAP b_Image;
 	HBITMAP b_BackImage;
@@ -16,7 +17,7 @@ private:
 
 public:
 	Layer();
-	Layer(HWND hWnd);
+	Layer(HINSTANCE g_hInst, HWND hWnd);
 	~Layer();
 
 	void Init();
@@ -29,4 +30,7 @@ public:
 	void Draw_TransparentBlt(gBitmap* bitmap, int r, int g, int b);
 
 	void Draw_PNGImage(PNG_Image* image);
+
+	HWND Get_hWnd();
+	HINSTANCE Get_g_hInst();
 };

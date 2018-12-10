@@ -5,19 +5,22 @@ SpellSelectScene::SpellSelectScene()
 }
 
 SpellSelectScene::SpellSelectScene(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(hWnd)
+	:Layer(g_hInst, hWnd)
 {
 	background = new gBitmap;
 
 	background->SetBitmap(hWnd, g_hInst, IDB_SPELLSCENE);
 
-	chirno = new Chirno(g_hInst, hWnd);
+	chirno = NULL;
 }
 
 SpellSelectScene::~SpellSelectScene()
 {
 	delete background;
 	background = NULL;
+
+	delete chirno;
+	chirno = NULL;
 
 	printf("SpellSelectScene Å¬·¡½º ¼Ò¸ê!\n");
 }
@@ -36,10 +39,19 @@ void SpellSelectScene::DrawBitmap()
 
 	if (selectCharacter == m_Chirno)
 	{
-		//chirno->DrawBitmap();
-		chirno->ChirnoCard[0]->set_X(100);
-		chirno->ChirnoCard[0]->set_AllPoint(300, 300, 100, 100);
-		this->Draw_PNGImage(chirno->ChirnoCard[0]);
+		if (chirno == NULL)
+		{
+			chirno = new Chirno(this->Get_g_hInst(), this->Get_hWnd());
+		}
+
+		int x = 0;
+
+		for (int i = 0; i < MAX_Card; i++)
+		{
+			chirno->ChirnoCard[i]->set_AllPoint((WIN_WIGHT / 2) / 2+x, (WIN_HEIGHT / 2) / 2, chirno->ChirnoCard[i]->GetWidth() * 2, chirno->ChirnoCard[i]->GetHeight() * 2);
+			this->Draw_PNGImage(chirno->ChirnoCard[i]);
+			x += 100;
+		}
 	}
 
 	this->Draw();

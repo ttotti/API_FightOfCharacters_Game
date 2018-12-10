@@ -5,7 +5,7 @@ GameStart::GameStart()
 }
 
 GameStart::GameStart(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(hWnd)
+	:Layer(g_hInst, hWnd)
 {
 	gamemap = new gBitmap;
 

@@ -2,7 +2,6 @@
 
 CharacterManage::CharacterManage()
 {
-
 }
 
 CharacterManage::~CharacterManage()

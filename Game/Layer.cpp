@@ -5,8 +5,9 @@ Layer::Layer()
 	Init();
 }
 
-Layer::Layer(HWND hWnd)
+Layer::Layer(HINSTANCE g_hInst, HWND hWnd)
 {
+	this->g_hInst = g_hInst;
 	this->hWnd = hWnd;
 	Init();
 }
@@ -74,4 +75,14 @@ void Layer::Draw_PNGImage(PNG_Image* image)
 	Graphics graphics(MemDC);
 
 	graphics.DrawImage(image->GetImage(), image->get_X(), image->get_Y(), image->get_W(), image->get_H());
+}
+
+HWND Layer::Get_hWnd()
+{
+	return hWnd;
+}
+
+HINSTANCE Layer::Get_g_hInst()
+{
+	return g_hInst;
 }

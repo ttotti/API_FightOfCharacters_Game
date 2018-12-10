@@ -5,7 +5,7 @@ Chirno::Chirno()
 }
 
 Chirno::Chirno(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(hWnd)
+	:Layer(g_hInst, hWnd)
 {
 	ChirnoCard2 = new PNG_Image;
 	ChirnoCard2->LoadPNG(g_hInst, IDB_pChirnoCard_1);

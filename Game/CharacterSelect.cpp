@@ -5,7 +5,7 @@ CharacterSelect::CharacterSelect()
 }
 
 CharacterSelect::CharacterSelect(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(hWnd)
+	:Layer(g_hInst, hWnd)
 {
 	BG_bitmap = new gBitmap;
 	BG_bitmap->SetBitmap(hWnd, g_hInst, IDB_SELECT);

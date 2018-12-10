@@ -5,7 +5,7 @@ MainScene::MainScene()
 }
 
 MainScene::MainScene(HINSTANCE g_hInst, HWND hWnd)
-	:Layer(hWnd)
+	:Layer(g_hInst, hWnd)
 {
 	mainbitmap = new gBitmap;
 	startbitmap = new gBitmap;
