@@ -7,8 +7,8 @@
 class Chirno :public Layer
 {
 public:
+	PNG_Image* Chirnoface;
 	PNG_Image* ChirnoCard[MAX_Card];
-	PNG_Image* ChirnoCard2;
 
 public:
 	Chirno();

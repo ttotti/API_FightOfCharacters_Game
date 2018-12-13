@@ -9,7 +9,18 @@
 class SpellSelectScene :public Layer
 {
 public:
-	gBitmap* background;
+	gBitmap* Home_bitmap;
+
+	PNG_Image* background;
+
+	PNG_Image* MovingUp;
+	PNG_Image* MovingDown;
+	PNG_Image* MovingLeft;
+	PNG_Image* MovingRight;
+
+	PNG_Image* LifeBar;
+	PNG_Image* HPLife;
+	PNG_Image* MPLife;
 
 	Chirno* chirno;
 

@@ -182,6 +182,13 @@
     <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_3.png" />
     <Image Include="..\resource\chirno\ChirnoCards\ChirnoCard_4.png" />
     <Image Include="..\resource\chirno\Chirnoface.png" />
+    <Image Include="..\resource\HPbar.png" />
+    <Image Include="..\resource\HPLife.png" />
+    <Image Include="..\resource\MovingCard_1.png" />
+    <Image Include="..\resource\MovingCard_2.png" />
+    <Image Include="..\resource\MovingCard_3.png" />
+    <Image Include="..\resource\MovingCard_4.png" />
+    <Image Include="..\resource\MPLife.png" />
     <Image Include="..\resource\spellScene.bmp" />
     <Image Include="..\resource\CharacterSelect.bmp" />
     <Image Include="..\resource\chirno\Chirnoface.bmp" />

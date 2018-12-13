@@ -31,6 +31,9 @@
     <Filter Include="소스 파일\Character">
       <UniqueIdentifier>{c9df8ef9-aabb-4f8e-b195-a80a51b0dc16}</UniqueIdentifier>
     </Filter>
+    <Filter Include="리소스 파일\MovingCard">
+      <UniqueIdentifier>{deecdeb7-a8a1-4fa6-a363-4465b1d93042}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -178,6 +181,27 @@
       <Filter>리소스 파일\Hong_Meiling</Filter>
     </Image>
     <Image Include="..\resource\Cardmap.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\MovingCard_1.png">
+      <Filter>리소스 파일\MovingCard</Filter>
+    </Image>
+    <Image Include="..\resource\MovingCard_2.png">
+      <Filter>리소스 파일\MovingCard</Filter>
+    </Image>
+    <Image Include="..\resource\MovingCard_3.png">
+      <Filter>리소스 파일\MovingCard</Filter>
+    </Image>
+    <Image Include="..\resource\MovingCard_4.png">
+      <Filter>리소스 파일\MovingCard</Filter>
+    </Image>
+    <Image Include="..\resource\HPbar.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\HPLife.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="..\resource\MPLife.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

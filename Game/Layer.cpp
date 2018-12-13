@@ -38,6 +38,8 @@ void Layer::DeleteImage()
 	DeleteObject(b_Image);
 
 	ReleaseDC(hWnd, hdc);
+
+	printf("Layer Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void Layer::Draw()

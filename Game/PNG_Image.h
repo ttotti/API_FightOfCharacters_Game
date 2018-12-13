@@ -22,19 +22,25 @@ private:
 	int bmWidth, bmHeight;
 
 public:
-	float get_X();
-	float get_Y();
-	float get_W();
-	float get_H();
+	inline float get_X() { return x; }
+	inline float get_Y() { return y; }
+	inline float get_W() { return w; }
+	inline float get_H() { return h; }
 
-	int GetWidth();
-	int GetHeight();
+	inline int GetWidth() { return image->GetWidth(); }
+	inline int GetHeight() { return image->GetHeight(); }
 
-	void set_X(float x);
-	void set_Y(float y);
-	void set_W(float w);
-	void set_H(float h);
-	void set_AllPoint(float x, float y, float w, float h);
+	inline void set_X(float x) { this->x = x; }
+	inline void set_Y(float y) { this->y = y; }
+	inline void set_W(float w) { this->w = w; }
+	inline void set_H(float h) { this->h = h; }
+	inline void set_AllPoint(float x, float y, float w, float h)
+	{
+		this->x = x;
+		this->y = y;
+		this->w = w;
+		this->h = h;
+	}
 
 public:
 	PNG_Image();

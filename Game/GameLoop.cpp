@@ -84,10 +84,21 @@ void GameLoop::Loop(HINSTANCE g_hInst, HWND hWnd)
 		if (spellSelectScene == NULL)
 		{
 			spellSelectScene = new SpellSelectScene(g_hInst, hWnd);
+			spellSelectScene->setCharacter(character_number);
 		}
 
-		spellSelectScene->setCharacter(character_number);
 		spellSelectScene->DrawBitmap();
+
+		if (C_x >= 50 && C_x <= spellSelectScene->Home_bitmap->GetWidth() + 50 && C_y >= 666 && C_y <= spellSelectScene->Home_bitmap->GetHeight() + 666)
+		{
+			selectMenu = SELECTSCENE;
+
+			delete spellSelectScene;
+			spellSelectScene = NULL;
+
+			C_x = 0;
+			C_y = 0;
+		}
 
 		break;
 

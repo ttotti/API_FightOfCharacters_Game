@@ -7,8 +7,8 @@ Chirno::Chirno()
 Chirno::Chirno(HINSTANCE g_hInst, HWND hWnd)
 	:Layer(g_hInst, hWnd)
 {
-	ChirnoCard2 = new PNG_Image;
-	ChirnoCard2->LoadPNG(g_hInst, IDB_pChirnoCard_1);
+	Chirnoface = new PNG_Image;
+	Chirnoface->LoadPNG(g_hInst, IDB_pCHIRNOFACE);
 
 	for (int i = 0; i < MAX_Card; i++)
 	{
@@ -20,6 +20,16 @@ Chirno::Chirno(HINSTANCE g_hInst, HWND hWnd)
 
 Chirno::~Chirno()
 {
+	delete Chirnoface;
+	Chirnoface = NULL;
+
+	for (int i = 0; i < MAX_Card; i++)
+	{
+		delete ChirnoCard[i];
+		ChirnoCard[i] = NULL;
+	}
+
+	printf("Chirno Å¬·¡½º ¼Ò¸ê!\n");
 }
 
 void Chirno::init()
@@ -28,15 +38,4 @@ void Chirno::init()
 
 void Chirno::DrawBitmap()
 {
-	ChirnoCard2->set_X(300);
-	this->Draw_PNGImage(ChirnoCard2);
-
-	int x = 0;
-
-	for (int i = 0; i < MAX_Card; i++)
-	{
-		ChirnoCard[i]->set_X(100 + x);
-		this->Draw_PNGImage(ChirnoCard[i]);
-		x += 50;
-	}
 }
